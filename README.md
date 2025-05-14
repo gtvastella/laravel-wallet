@@ -19,8 +19,8 @@ Wallet App é uma API REST desenlvoida em Laravel com princípios SOLID e contai
 
 1. Clone o repositório:
    ```
-   git clone https://github.com/seu-usuario/wallet-app.git
-   cd wallet-app
+   git clone https://github.com/gtvastella/laravel-wallet
+   cd laravel-wallet
    ```
 
 2. Inicie os containers:
@@ -130,18 +130,12 @@ Content-Type: application/json
 
 ## Testes
 
-Para executar os testes, utilize o seguinte comando:
-
-```
-docker-compose exec wallet_api_app php artisan test
-```
-
 ### Executando testes
 
 Os testes podem ser executados para garantir que todas as funcionalidades da API estão funcionando corretamente. Para rodar os testes, utilize o seguinte comando:
 
 ```
-docker-compose exec wallet_api_app php artisan test
+docker-compose exec app php artisan test
 ```
 
 ### Collection Postman

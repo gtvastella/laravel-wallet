@@ -12,6 +12,7 @@ services:
     volumes:
       - ./wallet-app:/var/www/html
       - /var/www/html/vendor
+      - /var/www/html/storage
 
   db:
     image: mysql:8.0
