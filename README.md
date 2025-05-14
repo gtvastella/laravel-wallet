@@ -144,6 +144,10 @@ Os testes podem ser executados para garantir que todas as funcionalidades da API
 docker-compose exec wallet_api_app php artisan test
 ```
 
+### Collection Postman
+
+Uma collection Postman está disponível para facilitar o teste dos endpoints da API. Você pode importar a coleção diretamente no Postman utilizando o arquivo `wallet_api_collection.json` localizado na wallet-app/postman do projeto.
+
 ## Licença
 
 Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
