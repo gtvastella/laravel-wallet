@@ -1,0 +1,43 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wallet_api_app
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    volumes:
+      - ./wallet-app:/var/www/html
+      - /var/www/html/vendor
+
+  db:
+    image: mysql:8.0
+    container_name: wallet_api_db
+    restart: always
+    environment:
+        MYSQL_DATABASE: laravel
+        MYSQL_ROOT_PASSWORD: root
+    ports:
+        - "3306:3306"
+    volumes:
+        - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: wallet_api_phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: ${DB_USERNAME:-root}
+      PMA_PASSWORD: ${DB_PASSWORD:-root}
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
+    driver: local
